@@ -1,6 +1,6 @@
 import { FC, useState } from "react";
-import { FiSettings } from 'react-icons/fi'
-
+import { FiSettings} from 'react-icons/fi';
+import { FiTrash2 } from 'react-icons/fi'
 import useMeasPopup from "./MeasPopup";
 import Checkbox from "../Checkbox";
 import MetaData from "./MetaData";
@@ -11,7 +11,7 @@ import { useMeasurementsCtx } from "../../context/MeasurementsContext";
 import { RideMeta } from "../../models/models";
 import { Measurement, RideMeasurement } from "../../models/properties";
 import { RendererName } from "../../models/renderers";
-import { addMeasurement, editMeasurement } from "../../queries/measurements";
+import { addMeasurement, editMeasurement, deleteMeasurement } from "../../queries/measurements";
 
 import '../../css/ridedetails.css'
 
@@ -44,10 +44,29 @@ const RideDetails: FC<Props> = ( {metas } ) => {
 		)
 	}
 
+	const openDeleteMeasurement = (e: any, i: number) => {
+		e.preventDefault()
+
+		const m = measurements[i]
+
+		const temp = measurements
+
+		const index = measurements.indexOf(m)
+
+
+		if (index > -1) { // only splice array when item is found
+			temp.splice(index, 1); // 2nd parameter means remove one item only
+		}
+
+		setMeasurements(temp)
+
+	}
+
 	const getMeasurementsContent = (m: Measurement, i: number): JSX.Element => {
 		return <div className="checkbox-container">
 			<div className="checkbox-title">{m.name} <p className="checkbox-subtitle">- {m.rendererName}</p></div>
 			<FiSettings className="edit-meas-btn btn" onClick={(e) => openEditMeasurement(e, i)} strokeWidth={1}/>
+			<FiTrash2 className="delete-meas-btn btn" onClick={(e) => openDeleteMeasurement(e,i)} strokeWidth={1}/>
 		</div>
 	}
 

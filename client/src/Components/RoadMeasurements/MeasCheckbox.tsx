@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import { FiSettings } from "react-icons/fi";
-import { MeasProperties } from "../../models/properties";
+import { Measurement } from "../../models/properties";
 import Checkbox from "../Checkbox";
 
 
@@ -24,7 +24,7 @@ const CheckboxHTML: FC<ICheckboxHTML> = ( { meas, editMeasurement } ) => {
 }
     
 interface IMeasCheckbox {
-    meas: MeasProperties;
+    meas: Measurement;
     editMeasurement: (e: React.MouseEvent) => void;
     selectMeasurement: (isChecked: boolean) => void; 
 }

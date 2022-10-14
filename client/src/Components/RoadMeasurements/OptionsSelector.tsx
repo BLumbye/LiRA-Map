@@ -1,6 +1,6 @@
 import React, { FC, useState } from 'react';
 import DatePicker from 'react-date-picker';
-import { TripsOptions } from '../../models/models';
+import { TripsOptions, SearchOptions } from '../../models/models';
 import Checkbox from '../Checkbox';
 
 const defaultOptions: TripsOptions = {
@@ -8,6 +8,11 @@ const defaultOptions: TripsOptions = {
   startDate: new Date('2020-01-01'),
   endDate: new Date(),
   reversed: false,
+  distanceKm: 0,
+};
+
+const deafaultSearchOptions: SearchOptions = {
+  search: '',
   distanceKm: 0,
 };
 
@@ -37,7 +42,7 @@ const OptionsSelector: FC<IOptionsSelector> = ({ onChange }) => {
           console.log(choice);
         }}
       >
-        {Object.keys(defaultOptions).map((key, _) => {
+        {Object.keys(deafaultSearchOptions).map((key, _) => {
           return (
             <option value={key} key={key}>
               {key}

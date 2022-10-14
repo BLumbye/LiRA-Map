@@ -35,3 +35,8 @@ export interface TripsOptions {
   reversed: boolean;
   distanceKm: number;
 }
+
+export interface SearchOptions {
+  search: string;
+  distanceKm: number;
+}

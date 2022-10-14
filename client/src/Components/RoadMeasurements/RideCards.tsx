@@ -4,7 +4,7 @@ import { RiDeleteBack2Line } from 'react-icons/ri';
 
 import Checkbox from '../Checkbox';
 
-import { RideMeta, TripsOptions } from '../../models/models';
+import { RideMeta, TripsOptions, SearchOptions } from '../../models/models';
 
 import '../../css/ridecard.css';
 import { useMetasCtx } from '../../context/MetasContext';
@@ -71,17 +71,25 @@ const RideCards: FC = () => {
     const temp: SelectMeta[] = updatedMetas
       .filter((meta: RideMeta) => {
         let inSearch;
-        console.log('key', key);
-        if (key.includes('distanceKm')) {
-          const searchedValue = Number(search);
-          if (isNaN(searchedValue)) {
-            inSearch = search === '' || meta.TaskId.toString().includes(search);
-          } else {
-            inSearch = meta.DistanceKm > searchedValue;
+        switch (key) {
+          case 'distanceKm': {
+            const searchedValue = Number(search);
+            if (isNaN(searchedValue)) {
+              inSearch =
+                search === '' || meta.TaskId.toString().includes(search);
+            } else {
+              inSearch = meta.DistanceKm > searchedValue;
+            }
+            break;
           }
-        } else {
-          inSearch = search === '' || meta.TaskId.toString().includes(search);
+
+          default: {
+            inSearch = search === '' || meta.TaskId.toString().includes(search);
+            break;
+          }
         }
+        console.log('key', key);
+
         const date = new Date(meta.Created_Date).getTime();
         const inDate = date >= startDate.getTime() && date <= endDate.getTime();
         return inSearch && inDate;

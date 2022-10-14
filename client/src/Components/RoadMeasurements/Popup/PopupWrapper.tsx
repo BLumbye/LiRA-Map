@@ -42,7 +42,12 @@ const PopupWrapper: FC<IPopupWrapper> = ({ defaultOptions, setOptions }) => {
     });
   }, []);
 
-  const inputChange =
+  const nameChange =
+    (key: keyof ActiveMeasProperties) =>
+    ({ target }: any) =>
+      update(key)(target.value);
+
+  const tagChange =
     (key: keyof ActiveMeasProperties) =>
     ({ value }: any) =>
       update(key)(value);
@@ -59,14 +64,14 @@ const PopupWrapper: FC<IPopupWrapper> = ({ defaultOptions, setOptions }) => {
         placeholder="Name.."
         type="text"
         defaultValue={name}
-        onChange={inputChange('name')}
+        onChange={nameChange('name')}
       />
 
       <Select
         className="react-select-combobox"
         placeholder="Tag.."
         value={dbName ? { value: dbName, label: dbName } : undefined}
-        onChange={inputChange('dbName')}
+        onChange={tagChange('dbName')}
         options={tagOptions}
       />
 

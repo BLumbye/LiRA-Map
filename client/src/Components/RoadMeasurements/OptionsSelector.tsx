@@ -90,6 +90,7 @@ const OptionsSelector: FC = () => {
         <Select
           className="react-select-combobox-filter"
           placeholder="Devices.."
+          isMulti
           onChange={onChange('deviceId')}
           options={deviceOptions}
         />

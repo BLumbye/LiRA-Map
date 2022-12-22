@@ -34,7 +34,7 @@ const defaultTripOptions: TripsOptions = {
   maxDistanceKm: undefined,
   startCity: '',
   endCity: '',
-  deviceId: '',
+  deviceId: [],
   nightMode: false,
 };
 

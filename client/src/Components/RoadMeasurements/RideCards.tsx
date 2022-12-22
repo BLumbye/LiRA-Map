@@ -149,9 +149,11 @@ const RideCards: FC = () => {
   };
 
   /** @author Mads Møller s184443, Martin Nielsen s174971 */
+  const deviceIdList = tripOptions.deviceId.map((obj: any) => obj.label);
   const deviceIdFilter = (meta: RideMeta) =>
     tripOptions.deviceId.length === 0 ||
-    meta.FK_Device.toString().includes(tripOptions.deviceId.value);
+    deviceIdList.includes(meta.FK_Device.toString());
+  console.log('🇩🇰', deviceIdList);
 
   const filteredMetas = useMemo<SelectMeta[]>(() => {
     const filtered = metas

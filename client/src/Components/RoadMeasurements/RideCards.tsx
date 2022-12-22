@@ -153,7 +153,6 @@ const RideCards: FC = () => {
   const deviceIdFilter = (meta: RideMeta) =>
     tripOptions.deviceId.length === 0 ||
     deviceIdList.includes(meta.FK_Device.toString());
-  console.log('🇩🇰', deviceIdList);
 
   const filteredMetas = useMemo<SelectMeta[]>(() => {
     const filtered = metas

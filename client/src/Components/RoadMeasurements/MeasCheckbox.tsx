@@ -3,13 +3,13 @@ import { FiSettings, FiTrash2 } from 'react-icons/fi';
 import { MeasProperties } from '../../models/properties';
 import Checkbox from '../Checkbox';
 
-/**@author Emil Kim Krarup (s204449) */
+/**@author Emil Kim Krarup (s204449), Lucien Kiven Tamo (s184448) */
 interface ICheckboxHTML {
   meas: MeasProperties;
   editMeasurement: (e: React.MouseEvent) => void;
   deleteMeasurement: (e: React.MouseEvent) => void;
 }
-/**@author Emil Kim Krarup (s204449) */
+/**@author Emil Kim Krarup (s204449), Lucien Kiven Tamo (s184448) */
 const CheckboxHTML: FC<ICheckboxHTML> = ({
   meas,
   editMeasurement,
@@ -36,14 +36,14 @@ const CheckboxHTML: FC<ICheckboxHTML> = ({
     </div>
   );
 };
-/**@author Emil Kim Krarup (s204449) */
+/**@author Emil Kim Krarup (s204449), Lucien Kiven Tamo (s184448) */
 interface IMeasCheckbox {
   meas: MeasProperties;
   editMeasurement: (e: React.MouseEvent) => void;
   deleteMeasurement: (e: React.MouseEvent) => void;
   selectMeasurement: (isChecked: boolean) => void;
 }
-/**@author Emil Kim Krarup (s204449) */
+/**@author Emil Kim Krarup (s204449), Lucien Kiven Tamo (s184448) */
 const MeasCheckbox: FC<IMeasCheckbox> = ({
   meas,
   editMeasurement,

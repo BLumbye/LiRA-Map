@@ -26,7 +26,7 @@ export class MeasurementsService {
     const updatedFile = [...measurements, measurement];
     return await this.writeFile(updatedFile);
   }
-  /**@author Emil Kim Krarup (s204449) */
+  /**@author Emil Kim Krarup (s204449), Lucien Kiven Tamo (s184448) */
   async editMeasurement(measurement: Measurement) {
     const measurements = await this.getMeasurements();
     const updatedFile = [...measurements];
@@ -34,7 +34,7 @@ export class MeasurementsService {
     updatedFile[index] = measurement;
     return await this.writeFile(updatedFile);
   }
-  /**@author Emil Kim Krarup (s204449) */
+  /**@author Emil Kim Krarup (s204449), Lucien Kiven Tamo (s184448) */
   async deleteMeasurement(measurementID: string) {
     const measurements = await this.getMeasurements();
     const filteredArray = measurements.filter(

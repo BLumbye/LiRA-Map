@@ -29,7 +29,7 @@ export class MeasurementsController {
     Logger.log(measurement);
     return this.service.addMeasurement(measurement);
   }
-  /**@author Emil Kim Krarup (s204449) */
+  /**@author Emil Kim Krarup (s204449), Lucien Kiven Tamo (s184448) */
   @Put('/:measurementID')
   editMeasurement(
     @Param('measurementID') measurementID: string,
@@ -38,7 +38,7 @@ export class MeasurementsController {
     const { measurement } = body.params;
     return this.service.editMeasurement(measurement);
   }
-  /**@author Emil Kim Krarup (s204449) */
+  /**@author Emil Kim Krarup (s204449), Lucien Kiven Tamo (s184448) */
   @Delete(':measurementID')
   deleteMeasurement(
     @Param('measurementID') measurementID: string,

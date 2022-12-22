@@ -58,12 +58,12 @@ const RideDetails: FC = () => {
         setMeasurements((prev) => [...prev, newMeasurement]);
         // and add the measurement to the measurements.json file
         addMeasurement(newMeasurement);
-      } /**@author Emil Kim Krarup (s204449) */,
+      } /**@author Emil Kim Krarup (s204449), Lucien Kiven Tamo (s184448) */,
       { ...RENDERER_MEAS_PROPERTIES, id: uuidv4() },
     );
   };
 
-  /**@author Emil Kim Krarup (s204449) */
+  /**@author Emil Kim Krarup (s204449), Lucien Kiven Tamo (s184448) */
   const showDeleteMeasurement =
     (m: ActiveMeasProperties) => (e: React.MouseEvent) => {
       e.preventDefault();
@@ -83,7 +83,7 @@ const RideDetails: FC = () => {
     setMeasurements(temp);
   };
 
-  /**@author Emil Kim Krarup (s204449) */
+  /**@author Emil Kim Krarup (s204449), Lucien Kiven Tamo (s184448) */
   return (
     <div className="meta-data">
       <CalculateMu />

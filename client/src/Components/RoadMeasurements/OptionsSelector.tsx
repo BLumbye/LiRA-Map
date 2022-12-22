@@ -7,7 +7,7 @@ import { getDevices } from '../../queries/devices';
 import Checkbox from '../Checkbox';
 import { useMetasCtx } from '../../context/MetasContext';
 
-/** @author Benjamin Lumbye s204428, Mads Møller s184443, Martin Nielsen s174971 */
+/** @author Benjamin Lumbye s204428, Mads Møller s184443, Martin Nielsen s174971, Usama Mir s134187 */
 const OptionsSelector: FC = () => {
   const { tripOptions, setTripOptions } = useMetasCtx();
   const [availableDevices, setDevice] = useState<DeviceProperties[]>();
@@ -18,7 +18,7 @@ const OptionsSelector: FC = () => {
     });
   }, []);
 
-  /** @author Mads Møller s184443, Martin Nielsen s174971 */
+  /** @author Mads Møller s184443, Martin Nielsen s174971, Usama Mir s134187 */
   const deviceOptions = availableDevices?.map((device) => ({
     value: device.DeviceId.toString(),
     label: device.DeviceId.toString(),
